@@ -1,0 +1,18 @@
+docker run -i -t -p 8888:8888 continuumio/anaconda3 /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser"
+
+https://harshitdawar.medium.com/integrating-docker-and-anaconda-49b6b14ff48e
+
+## execute the container
+docker exec -it anaconda bash
+
+## update conda 
+conda update -n base -c defaults conda
+
+## create custom environment
+conda create -n $environment_name
+
+## switch to the custom environment
+conda activate $environment_name
+
+## install particular package in the environment
+conda install $package1
