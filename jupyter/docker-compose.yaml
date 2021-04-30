@@ -1,0 +1,11 @@
+version: "3.6"
+services:
+  anacondaos:
+    ## image: continuumio/anaconda3
+    build: .
+    container_name: anaconda_dev
+    volumes:
+      - ../../course/:/opt/notebooks/
+    ports:
+      - 8888:8888
+    tty: true

@@ -1,9 +1,13 @@
+## always start from /jupyter folder to read toke information
+docker-compose up 
+
 docker run -i -t -p 8888:8888 continuumio/anaconda3 /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser"
 
 https://harshitdawar.medium.com/integrating-docker-and-anaconda-49b6b14ff48e
+https://pythonspeed.com/articles/activate-conda-dockerfile/#working
 
 ## execute the container
-docker exec -it anaconda bash
+docker exec -it anaconda_dev bash
 
 ## update conda 
 conda update -n base -c defaults conda
